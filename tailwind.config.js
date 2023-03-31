@@ -9,7 +9,7 @@
       {
         mytheme: {
         
-          "primary": "#db5f1c",
+          "primary": "#6047EC",
                   
           "secondary": "#e8c766",
                   
