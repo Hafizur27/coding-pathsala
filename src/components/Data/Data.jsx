@@ -1,4 +1,6 @@
 import React from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faBookmark } from '@fortawesome/free-solid-svg-icons'
 
 const Data = (props) => {
     const {name, title, cover, profile, read_time, published_date} = props.data;
@@ -15,8 +17,10 @@ const Data = (props) => {
                             <p className='font-medium'>March {published_date}</p>
                         </div>
                     </div>
-                    <div>
+                    <div className='flex gap-3'>
                         <p>{read_time} min read</p>
+                        <p><FontAwesomeIcon icon={faBookmark} /></p>
+
                     </div>
                     </div>
                     <div>
