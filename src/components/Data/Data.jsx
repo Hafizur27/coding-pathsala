@@ -1,20 +1,31 @@
 import React from 'react';
 
 const Data = (props) => {
-    const {id, name, title, cover, profile, read_time, published_date} = props.data;
+    const {name, title, cover, profile, read_time, published_date} = props.data;
     return (
-        <div>
-            <div className="card w-full bg-base-100 shadow-xl">
-                <figure><img src="/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg" alt="Shoes" /></figure>
+        <>
+            <div className="card w-full bg-base-100 shadow-xl mb-6">
+                <figure><img src={cover} alt="Shoes" /></figure>
                 <div className="card-body">
-                    <h2 className="card-title">Shoes!</h2>
-                    <p>If a dog chews shoes whose shoes does he choose?</p>
-                    <div className="card-actions justify-end">
-                    <button className="btn btn-primary">Buy Now</button>
+                    <div className='flex justify-between align-middle'>
+                    <div className='flex gap-5'>
+                        <img className='h-14 w-14 rounded-full' src={profile} alt="" />
+                        <div>
+                            <h4 className='font-bold'>{name}</h4>
+                            <p className='font-medium'>March {published_date}</p>
+                        </div>
+                    </div>
+                    <div>
+                        <p>{read_time} min read</p>
+                    </div>
+                    </div>
+                    <div>
+                    <h2 className="card-title font-extrabold">{title}</h2>
+                    <button className='btn  btn-link text-primary p-0'>Mark as read</button>
                     </div>
                 </div>
             </div>
-        </div>
+        </>
     );
 };
 
