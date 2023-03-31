@@ -4,7 +4,7 @@ import img from '../../nav-img/nav.jpg'
 const Header = () => {
     return (
         <>
-           <div className="navbar bg-base-100 w-5/6 mx-auto pt-6">
+           <div className="navbar bg-base-100 w-5/6 mx-auto mt-6">
                     <div className="flex-1">
                         <a className="btn btn-secondary normal-case text-xl">Coding_Pathsala</a>
                     </div>
