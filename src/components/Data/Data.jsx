@@ -1,15 +1,12 @@
 import React from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faBookmark } from '@fortawesome/free-solid-svg-icons'
-import { ToastContainer, toast } from 'react-toastify';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faBookmark } from '@fortawesome/free-solid-svg-icons';
 
 const Data = (props) => {
     const {name, title, cover, profile, read_time, published_date} = props.data;
     const handelReadBtn = props.handelReadBtn;
     const handelBookMarkBtn = props.handelBookMarkBtn;
-    const showToast = () =>{
-        toast('Already bookmarked this book.')
-    }
+
     return (
         <>
             <div className="card w-full bg-base-100 shadow-xl mb-6 p-4">
@@ -25,13 +22,13 @@ const Data = (props) => {
                     </div>
                     <div className='md:flex md:gap-3'>
                         <p>Read-Time : {read_time} min</p>
-                        <p  onClick={() => {handelBookMarkBtn(props.data); showToast();}}><FontAwesomeIcon icon={faBookmark} /></p>
+                        <a  onClick={() => handelBookMarkBtn(props.data)}><FontAwesomeIcon icon={faBookmark} /></a>
 
                     </div>
                     </div>
                     <div>
-                    <h2 className="card-title font-extrabold my-4">{title}</h2>
-                    <button onClick={()  => handelReadBtn(props.data)} className='btn  btn-link text-primary p-0'>Mark as read</button>
+                        <h2 className="card-title font-extrabold my-4">{title}</h2>
+                        <button onClick={()  => handelReadBtn(props.data)} className='btn  btn-link text-primary p-0'>Mark as read</button>
                     </div>
                 </div>
             </div>
