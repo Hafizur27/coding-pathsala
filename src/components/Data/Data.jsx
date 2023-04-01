@@ -4,6 +4,7 @@ import { faBookmark } from '@fortawesome/free-solid-svg-icons'
 
 const Data = (props) => {
     const {name, title, cover, profile, read_time, published_date} = props.data;
+    const handelReadBtn = props.handelReadBtn;
     return (
         <>
             <div className="card w-full bg-base-100 shadow-xl mb-6">
@@ -25,7 +26,7 @@ const Data = (props) => {
                     </div>
                     <div>
                     <h2 className="card-title font-extrabold">{title}</h2>
-                    <button className='btn  btn-link text-primary p-0'>Mark as read</button>
+                    <button onClick={()  => handelReadBtn(props.data)} className='btn  btn-link text-primary p-0'>Mark as read</button>
                     </div>
                 </div>
             </div>

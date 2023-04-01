@@ -2,7 +2,7 @@ import React from 'react';
 
 const Question = () => {
     return (
-        <div className='w-5/6 mx-auto pt-6 grid grid-cols-1 md:grid-cols-2 gap-4 mb-6 '>
+        <div className='w-5/6 mx-auto pt-6 grid grid-cols-1 md:grid-cols-2 md:gap-4 mb-6 '>
             <div className='bg-base-100 shadow-xl rounded p-4'>
                 <h1 className='text-center p-4 font-bold text-primary '>Difference between props and state.</h1>
                 <p><span className='font-extrabold'>Props : </span> Props are immutable and read only data. Props allow to pass data from one component to another components as an arguments. props can be accessed by the child components. Props are used to communicate between components. Stateless components can have props. Props make component reusable. <br /><br /><span className='font-extrabold'>State : </span>State is mutable and state changes can be asynchronous. State holds information about the components. States can not be accessed by the child components. Stateless components can not have state. State can not make components reusable.</p>
