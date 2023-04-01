@@ -5,6 +5,7 @@ import { faBookmark } from '@fortawesome/free-solid-svg-icons'
 const Data = (props) => {
     const {name, title, cover, profile, read_time, published_date} = props.data;
     const handelReadBtn = props.handelReadBtn;
+    const handelBookMarkBtn = props.handelBookMarkBtn;
     return (
         <>
             <div className="card w-full bg-base-100 shadow-xl mb-6">
@@ -20,7 +21,7 @@ const Data = (props) => {
                     </div>
                     <div className='flex gap-3'>
                         <p>{read_time} min read</p>
-                        <p><FontAwesomeIcon icon={faBookmark} /></p>
+                        <p onClick={() => handelBookMarkBtn(props.data)}><FontAwesomeIcon icon={faBookmark} /></p>
 
                     </div>
                     </div>

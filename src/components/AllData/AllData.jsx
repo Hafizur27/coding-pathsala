@@ -5,26 +5,31 @@ import Blogs from '../Blogs/Blogs';
 const AllData = () => {
     const [allData, setAllData] = useState([])
     const [addData, setAddData] = useState([])
+    const [bookMark, setBookMark] = useState([])
     useEffect(() =>{
         fetch('allData.json')
         .then(res => res.json())
         .then(data => setAllData(data))
     },[])
     
-const handelReadBtn = (data) =>{
-    const addNewData = [...addData, data]
+const handelReadBtn = (readData) =>{
+    const addNewData = [...addData, readData]
     setAddData(addNewData)
+}
+const handelBookMarkBtn = (bookMarkData) =>{
+    const newBookMark = [...bookMark, bookMarkData];
+    setBookMark(newBookMark);
 }
 
     return (
         <div className='w-5/6 mx-auto pt-6 md:flex gap-12'>
            <div className='md:flex-initial md:w-3/5'>
             {
-                allData.map(data => <Data data={data} key={data.id} handelReadBtn={handelReadBtn}></Data>)
+                allData.map(data => <Data data={data} key={data.id} handelReadBtn={handelReadBtn} handelBookMarkBtn ={handelBookMarkBtn}></Data>)
             }
            </div>
            <div className='md:flex-initial md:w-1/3'>
-                <Blogs addData={addData}></Blogs>
+                <Blogs addData={addData} bookMark = {bookMark}></Blogs>
            </div>
         </div>
     );
